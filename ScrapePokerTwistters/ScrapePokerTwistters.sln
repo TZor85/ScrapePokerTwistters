@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapePokerTwistters", "ScrapePokerTwistters.csproj", "{2D2B5E1B-BA3E-4208-BA00-4E9F2F52DD3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrapePokerTwisters.App", "src/ScrapePokerTwisters.App/ScrapePokerTwisters.App.csproj", "{2D2B5E1B-BA3E-4208-BA00-4E9F2F52DD3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75B4DA02-298B-48EC-BD8B-B4806CDBC3E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D2B5E1B-BA3E-4208-BA00-4E9F2F52DD3E} = {75B4DA02-298B-48EC-BD8B-B4806CDBC3E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E3132C5-502F-4560-AF0E-5979AD422D5F}
