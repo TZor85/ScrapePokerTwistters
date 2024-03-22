@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ScrapePokerTwistters
 {
-    partial class Home
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,13 +33,10 @@ namespace ScrapePokerTwistters
         /// </summary>
         private void InitializeComponent()
         {
-            TreeNode treeNode5 = new TreeNode("Regions");
-            TreeNode treeNode6 = new TreeNode("Board");
-            TreeNode treeNode7 = new TreeNode("Images");
-            TreeNode treeNode8 = new TreeNode("Fonts");
-            //
-            // Buttons
-            //            
+            TreeNode treeNode1 = new TreeNode("Regions");
+            TreeNode treeNode2 = new TreeNode("Board");
+            TreeNode treeNode3 = new TreeNode("Images");
+            TreeNode treeNode4 = new TreeNode("Fonts");
             btnNew = new Button();
             btnPlusWidth = new Button();
             btnMinusWidth = new Button();
@@ -64,6 +61,7 @@ namespace ScrapePokerTwistters
             pbCard0 = new PictureBox();
             tbResumen = new TextBox();
             ckColor = new CheckBox();
+            gbTest = new GroupBox();
             lbAction = new System.Windows.Forms.Label();
             lbXY = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -78,35 +76,18 @@ namespace ScrapePokerTwistters
             ckBoard = new CheckBox();
             tbWidth = new TextBox();
             groupBox1 = new GroupBox();
+            tbHeight = new TextBox();
             groupBox2 = new GroupBox();
             twRegions = new TreeView();
-            tbHeight = new TextBox();
             cbSpeed = new ComboBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            cbRiver = new CheckBox();
+            cbTurn = new CheckBox();
+            cbFlop = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pbCard1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCard0).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
-            // 
-            // twRegions
-            // 
-            twRegions.Location = new Point(12, 48);
-            twRegions.Name = "twRegions";
-            treeNode5.Name = "Nodo0";
-            treeNode5.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            treeNode5.Text = "Regions";
-            treeNode6.Name = "Nodo1";
-            treeNode6.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            treeNode6.Text = "Board";
-            treeNode7.Name = "Nodo2";
-            treeNode7.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            treeNode7.Text = "Images";
-            treeNode8.Name = "Nodo3";
-            treeNode8.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            treeNode8.Text = "Fonts";
-            twRegions.Nodes.AddRange(new TreeNode[] { treeNode5, treeNode6, treeNode7, treeNode8 });
-            twRegions.Size = new Size(159, 342);
-            twRegions.TabIndex = 0;
             // 
             // btnNew
             // 
@@ -116,6 +97,7 @@ namespace ScrapePokerTwistters
             btnNew.TabIndex = 1;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnPlusWidth
             // 
@@ -162,126 +144,6 @@ namespace ScrapePokerTwistters
             btnMinusHeight.Text = "-";
             btnMinusHeight.TextAlign = ContentAlignment.TopCenter;
             btnMinusHeight.UseVisualStyleBackColor = true;
-            // 
-            // lbXY
-            // 
-            lbXY.AutoSize = true;
-            lbXY.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            lbXY.Location = new Point(130, 77);
-            lbXY.Name = "lbXY";
-            lbXY.Size = new Size(0, 13);
-            lbXY.TabIndex = 8;
-            // 
-            // tbHeight
-            // 
-            tbHeight.Location = new Point(73, 42);
-            tbHeight.Name = "tbHeight";
-            tbHeight.Size = new Size(49, 23);
-            tbHeight.TabIndex = 7;
-            tbHeight.Text = "0";
-            tbHeight.TextAlign = HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(73, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Height";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(10, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Width";
-            // 
-            // tbWidth
-            // 
-            tbWidth.Location = new Point(10, 42);
-            tbWidth.Name = "tbWidth";
-            tbWidth.Size = new Size(49, 23);
-            tbWidth.TabIndex = 0;
-            tbWidth.Text = "0";
-            tbWidth.TextAlign = HorizontalAlignment.Right;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(lbXY);
-            groupBox1.Controls.Add(tbHeight);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(tbWidth);
-            groupBox1.Controls.Add(btnPlusWidth);
-            groupBox1.Controls.Add(btnMinusWidth);
-            groupBox1.Controls.Add(btnPlusHeight);
-            groupBox1.Controls.Add(btnMinusHeight);
-            groupBox1.Location = new Point(177, 9);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(203, 100);
-            groupBox1.TabIndex = 15;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Rectangle";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(tbY);
-            groupBox2.Controls.Add(tbX);
-            groupBox2.Controls.Add(btnUpRight);
-            groupBox2.Controls.Add(btnDownRight);
-            groupBox2.Controls.Add(btnDownLeft);
-            groupBox2.Controls.Add(btnUpLeft);
-            groupBox2.Controls.Add(btnUp);
-            groupBox2.Controls.Add(btnDown);
-            groupBox2.Controls.Add(btnLeft);
-            groupBox2.Controls.Add(btnRigth);
-            groupBox2.Location = new Point(464, 9);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(107, 143);
-            groupBox2.TabIndex = 16;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Nudge";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(57, 96);
-            label7.Name = "label7";
-            label7.Size = new Size(14, 15);
-            label7.TabIndex = 32;
-            label7.Text = "Y";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(5, 96);
-            label3.Name = "label3";
-            label3.Size = new Size(14, 15);
-            label3.TabIndex = 31;
-            label3.Text = "X";
-            // 
-            // tbY
-            // 
-            tbY.Location = new Point(58, 114);
-            tbY.Name = "tbY";
-            tbY.Size = new Size(43, 23);
-            tbY.TabIndex = 30;
-            tbY.Text = "0";
-            tbY.TextAlign = HorizontalAlignment.Right;
-            // 
-            // tbX
-            // 
-            tbX.Location = new Point(6, 114);
-            tbX.Name = "tbX";
-            tbX.Size = new Size(43, 23);
-            tbX.TabIndex = 29;
-            tbX.Text = "0";
-            tbX.TextAlign = HorizontalAlignment.Right;
             // 
             // btnUpRight
             // 
@@ -377,15 +239,6 @@ namespace ScrapePokerTwistters
             btnRigth.TextAlign = ContentAlignment.TopCenter;
             btnRigth.UseVisualStyleBackColor = true;
             // 
-            // cbSpeed
-            // 
-            cbSpeed.FormattingEnabled = true;
-            cbSpeed.Items.AddRange(new object[] { "1", "2", "5", "10", "20", "30", "40", "50" });
-            cbSpeed.Location = new Point(386, 18);
-            cbSpeed.Name = "cbSpeed";
-            cbSpeed.Size = new Size(42, 23);
-            cbSpeed.TabIndex = 12;
-            // 
             // btnSaveMap
             // 
             btnSaveMap.Location = new Point(516, 367);
@@ -394,6 +247,7 @@ namespace ScrapePokerTwistters
             btnSaveMap.TabIndex = 13;
             btnSaveMap.Text = "Save Map";
             btnSaveMap.UseVisualStyleBackColor = true;
+            btnSaveMap.Click += btnSaveMap_Click;
             // 
             // btnLoadMap
             // 
@@ -403,6 +257,7 @@ namespace ScrapePokerTwistters
             btnLoadMap.TabIndex = 14;
             btnLoadMap.Text = "Load Map";
             btnLoadMap.UseVisualStyleBackColor = true;
+            btnLoadMap.Click += btnLoadMap_Click;
             // 
             // btnCapture
             // 
@@ -441,55 +296,6 @@ namespace ScrapePokerTwistters
             btnWindow.Text = "Window";
             btnWindow.UseVisualStyleBackColor = true;
             // 
-            // ckColor
-            // 
-            ckColor.AutoSize = true;
-            ckColor.Enabled = false;
-            ckColor.Location = new Point(386, 79);
-            ckColor.Name = "ckColor";
-            ckColor.Size = new Size(55, 19);
-            ckColor.TabIndex = 29;
-            ckColor.Text = "Color";
-            ckColor.UseVisualStyleBackColor = true;
-            // 
-            // tbR
-            // 
-            tbR.Enabled = false;
-            tbR.Location = new Point(222, 113);
-            tbR.Name = "tbR";
-            tbR.Size = new Size(71, 23);
-            tbR.TabIndex = 32;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(177, 116);
-            label8.Name = "label8";
-            label8.Size = new Size(36, 15);
-            label8.TabIndex = 39;
-            label8.Text = "Color";
-            // 
-            // cbTest
-            // 
-            cbTest.AutoSize = true;
-            cbTest.Location = new Point(125, 23);
-            cbTest.Name = "cbTest";
-            cbTest.Size = new Size(46, 19);
-            cbTest.TabIndex = 44;
-            cbTest.Text = "Test";
-            cbTest.UseVisualStyleBackColor = true;
-            // 
-            // ckBoard
-            // 
-            ckBoard.AutoSize = true;
-            ckBoard.Enabled = false;
-            ckBoard.Location = new Point(386, 54);
-            ckBoard.Name = "ckBoard";
-            ckBoard.Size = new Size(57, 19);
-            ckBoard.TabIndex = 45;
-            ckBoard.Text = "Board";
-            ckBoard.UseVisualStyleBackColor = true;
-            // 
             // btnCreateFont
             // 
             btnCreateFont.Location = new Point(464, 189);
@@ -498,16 +304,6 @@ namespace ScrapePokerTwistters
             btnCreateFont.TabIndex = 47;
             btnCreateFont.Text = "Create Font";
             btnCreateFont.UseVisualStyleBackColor = true;
-            // 
-            // lbAction
-            // 
-            lbAction.AutoSize = true;
-            lbAction.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbAction.Location = new Point(242, 460);
-            lbAction.Name = "lbAction";
-            lbAction.Size = new Size(57, 21);
-            lbAction.TabIndex = 55;
-            lbAction.Text = "label9";
             // 
             // pbCard1
             // 
@@ -534,12 +330,265 @@ namespace ScrapePokerTwistters
             tbResumen.Size = new Size(251, 242);
             tbResumen.TabIndex = 60;
             // 
-            // Home
+            // ckColor
+            // 
+            ckColor.AutoSize = true;
+            ckColor.Enabled = false;
+            ckColor.Location = new Point(386, 79);
+            ckColor.Name = "ckColor";
+            ckColor.Size = new Size(55, 19);
+            ckColor.TabIndex = 29;
+            ckColor.Text = "Color";
+            ckColor.UseVisualStyleBackColor = true;
+            // 
+            // lbAction
+            // 
+            lbAction.AutoSize = true;
+            lbAction.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lbAction.Location = new Point(242, 460);
+            lbAction.Name = "lbAction";
+            lbAction.Size = new Size(57, 21);
+            lbAction.TabIndex = 55;
+            lbAction.Text = "label9";
+            // 
+            // lbXY
+            // 
+            lbXY.AutoSize = true;
+            lbXY.Font = new Font("Segoe UI", 8F);
+            lbXY.Location = new Point(130, 77);
+            lbXY.Name = "lbXY";
+            lbXY.Size = new Size(0, 13);
+            lbXY.TabIndex = 8;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(73, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(43, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Height";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(10, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Width";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(57, 96);
+            label7.Name = "label7";
+            label7.Size = new Size(14, 15);
+            label7.TabIndex = 32;
+            label7.Text = "Y";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(5, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(14, 15);
+            label3.TabIndex = 31;
+            label3.Text = "X";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(177, 116);
+            label8.Name = "label8";
+            label8.Size = new Size(36, 15);
+            label8.TabIndex = 39;
+            label8.Text = "Color";
+            // 
+            // tbY
+            // 
+            tbY.Location = new Point(58, 114);
+            tbY.Name = "tbY";
+            tbY.Size = new Size(43, 23);
+            tbY.TabIndex = 30;
+            tbY.Text = "0";
+            tbY.TextAlign = HorizontalAlignment.Right;
+            // 
+            // tbX
+            // 
+            tbX.Location = new Point(6, 114);
+            tbX.Name = "tbX";
+            tbX.Size = new Size(43, 23);
+            tbX.TabIndex = 29;
+            tbX.Text = "0";
+            tbX.TextAlign = HorizontalAlignment.Right;
+            // 
+            // tbR
+            // 
+            tbR.Enabled = false;
+            tbR.Location = new Point(222, 113);
+            tbR.Name = "tbR";
+            tbR.Size = new Size(71, 23);
+            tbR.TabIndex = 32;
+            // 
+            // cbTest
+            // 
+            cbTest.AutoSize = true;
+            cbTest.Location = new Point(125, 23);
+            cbTest.Name = "cbTest";
+            cbTest.Size = new Size(46, 19);
+            cbTest.TabIndex = 44;
+            cbTest.Text = "Test";
+            cbTest.UseVisualStyleBackColor = true;
+            cbTest.CheckedChanged += cbTest_CheckedChanged;
+            // 
+            // ckBoard
+            // 
+            ckBoard.AutoSize = true;
+            ckBoard.Enabled = false;
+            ckBoard.Location = new Point(386, 54);
+            ckBoard.Name = "ckBoard";
+            ckBoard.Size = new Size(57, 19);
+            ckBoard.TabIndex = 45;
+            ckBoard.Text = "Board";
+            ckBoard.UseVisualStyleBackColor = true;
+            // 
+            // tbWidth
+            // 
+            tbWidth.Location = new Point(10, 42);
+            tbWidth.Name = "tbWidth";
+            tbWidth.Size = new Size(49, 23);
+            tbWidth.TabIndex = 0;
+            tbWidth.Text = "0";
+            tbWidth.TextAlign = HorizontalAlignment.Right;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lbXY);
+            groupBox1.Controls.Add(tbHeight);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(tbWidth);
+            groupBox1.Controls.Add(btnPlusWidth);
+            groupBox1.Controls.Add(btnMinusWidth);
+            groupBox1.Controls.Add(btnPlusHeight);
+            groupBox1.Controls.Add(btnMinusHeight);
+            groupBox1.Location = new Point(177, 9);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(203, 100);
+            groupBox1.TabIndex = 15;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Rectangle";
+            // 
+            // tbHeight
+            // 
+            tbHeight.Location = new Point(73, 42);
+            tbHeight.Name = "tbHeight";
+            tbHeight.Size = new Size(49, 23);
+            tbHeight.TabIndex = 7;
+            tbHeight.Text = "0";
+            tbHeight.TextAlign = HorizontalAlignment.Right;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(tbY);
+            groupBox2.Controls.Add(tbX);
+            groupBox2.Controls.Add(btnUpRight);
+            groupBox2.Controls.Add(btnDownRight);
+            groupBox2.Controls.Add(btnDownLeft);
+            groupBox2.Controls.Add(btnUpLeft);
+            groupBox2.Controls.Add(btnUp);
+            groupBox2.Controls.Add(btnDown);
+            groupBox2.Controls.Add(btnLeft);
+            groupBox2.Controls.Add(btnRigth);
+            groupBox2.Location = new Point(464, 9);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(107, 143);
+            groupBox2.TabIndex = 16;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Nudge";
+            // 
+            // twRegions
+            // 
+            twRegions.Location = new Point(12, 48);
+            twRegions.Name = "twRegions";
+            treeNode1.Name = "Nodo0";
+            treeNode1.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            treeNode1.Text = "Regions";
+            treeNode2.Name = "Nodo1";
+            treeNode2.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            treeNode2.Text = "Board";
+            treeNode3.Name = "Nodo2";
+            treeNode3.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            treeNode3.Text = "Images";
+            treeNode4.Name = "Nodo3";
+            treeNode4.NodeFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            treeNode4.Text = "Fonts";
+            twRegions.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode2, treeNode3, treeNode4 });
+            twRegions.Size = new Size(159, 342);
+            twRegions.TabIndex = 0;
+            // 
+            // cbSpeed
+            // 
+            cbSpeed.FormattingEnabled = true;
+            cbSpeed.Items.AddRange(new object[] { "1", "2", "5", "10", "20", "30", "40", "50" });
+            cbSpeed.Location = new Point(386, 18);
+            cbSpeed.Name = "cbSpeed";
+            cbSpeed.Size = new Size(42, 23);
+            cbSpeed.TabIndex = 12;
+            // 
+            // gbTest
+            // 
+            gbTest.Controls.Add(cbRiver);
+            gbTest.Controls.Add(cbTurn);
+            gbTest.Controls.Add(cbFlop);
+            gbTest.Enabled = false;
+            gbTest.Location = new Point(12, 408);
+            gbTest.Name = "gbTest";
+            gbTest.Size = new Size(103, 99);
+            gbTest.TabIndex = 64;
+            gbTest.TabStop = false;
+            gbTest.Text = "Test";
+            // 
+            // cbRiver
+            // 
+            cbRiver.AutoSize = true;
+            cbRiver.Location = new Point(6, 72);
+            cbRiver.Name = "cbRiver";
+            cbRiver.Size = new Size(52, 19);
+            cbRiver.TabIndex = 47;
+            cbRiver.Text = "River";
+            cbRiver.UseVisualStyleBackColor = true;
+            // 
+            // cbTurn
+            // 
+            cbTurn.AutoSize = true;
+            cbTurn.Location = new Point(6, 47);
+            cbTurn.Name = "cbTurn";
+            cbTurn.Size = new Size(50, 19);
+            cbTurn.TabIndex = 46;
+            cbTurn.Text = "Turn";
+            cbTurn.UseVisualStyleBackColor = true;
+            // 
+            // cbFlop
+            // 
+            cbFlop.AutoSize = true;
+            cbFlop.Location = new Point(6, 22);
+            cbFlop.Name = "cbFlop";
+            cbFlop.Size = new Size(49, 19);
+            cbFlop.TabIndex = 45;
+            cbFlop.Text = "Flop";
+            cbFlop.UseVisualStyleBackColor = true;
+            // 
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(593, 585);
             Controls.Add(btnNew);
+            Controls.Add(gbTest);
             Controls.Add(btnSaveMap);
             Controls.Add(btnLoadMap);
             Controls.Add(btnCapture);
@@ -560,10 +609,18 @@ namespace ScrapePokerTwistters
             Controls.Add(groupBox2);
             Controls.Add(twRegions);
             Controls.Add(cbSpeed);
-            Name = "Home";
+            Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pbCard1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCard0).EndInit();
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            gbTest.ResumeLayout(false);
+            gbTest.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -610,5 +667,9 @@ namespace ScrapePokerTwistters
         private ComboBox cbSpeed;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private GroupBox gbTest;
+        private CheckBox cbRiver;
+        private CheckBox cbTurn;
+        private CheckBox cbFlop;
     }
 }

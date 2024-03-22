@@ -1,4 +1,6 @@
-namespace ScrapePokerTwistters
+using ScrapePokerTwistters;
+
+namespace ScrapePokerTwisters.App
 {
     internal static class Program
     {
@@ -11,7 +13,8 @@ namespace ScrapePokerTwistters
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Home());
+            Application.Run(new Form1());
+            
         }
     }
 }
