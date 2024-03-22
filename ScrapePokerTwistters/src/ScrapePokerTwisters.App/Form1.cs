@@ -4,6 +4,7 @@ using ScrapePokerTwisters.App.Interfaces;
 using ScrapePokerTwisters.App.Aplication.UseCases.Maps;
 using ScrapePokerTwisters.App.Aplication.UseCases.Images;
 using ScrapePokerTwisters.App.Aplication.Helpers;
+using System.Windows.Forms;
 
 
 namespace ScrapePokerTwistters
@@ -13,6 +14,7 @@ namespace ScrapePokerTwistters
         #region Forms
         FormRegions _formRegions;
         FormImage _formImage;
+        Graphics _papel;
         #endregion
 
 
@@ -32,8 +34,9 @@ namespace ScrapePokerTwistters
         static readonly IGetHashImageUseCase _getHashImageUseCase = new GetHashImageUseCase();
         static readonly IGetCropImageUseCase _getCropImageUseCase = new GetCropImageUseCase();
 
-
         #endregion
+
+        Image? _img = null;
 
         List<KeyValuePair<string, string>> _imageList = new List<KeyValuePair<string, string>>();
 
@@ -240,5 +243,63 @@ namespace ScrapePokerTwistters
         {
             gbTest.Enabled = cbTest.Checked;
         }
+
+        #region Salir TextBox
+        private void tbWidth_Leave(object sender, EventArgs e)
+        {
+            _formImage.pbImagen.Refresh();
+
+            _papel = _formImage.pbImagen.CreateGraphics();
+            Pen lapiz = new Pen(Color.Red);
+
+            _locRegion.Width = int.Parse(tbWidth.Text);
+            _papel.DrawRectangle(lapiz, _locRegion.X, _locRegion.Y, _locRegion.Width, _locRegion.Height);
+
+            _img = _formImage.pbImagen.Image;
+        }
+
+        private void tbHeight_Leave(object sender, EventArgs e)
+        {
+            _formImage.pbImagen.Refresh();
+
+            _papel = _formImage.pbImagen.CreateGraphics();
+            Pen lapiz = new Pen(Color.Red);
+
+            _locRegion.Width = int.Parse(tbWidth.Text);
+            _papel.DrawRectangle(lapiz, _locRegion.X, _locRegion.Y, _locRegion.Width, _locRegion.Height);
+
+            _img = _formImage.pbImagen.Image;
+
+        }
+
+        private void tbX_Leave(object sender, EventArgs e)
+        {
+            _formImage.pbImagen.Refresh();
+
+            _papel = _formImage.pbImagen.CreateGraphics();
+            Pen lapiz = new Pen(Color.Red);
+
+            _locRegion.X = int.Parse(tbX.Text);
+            _papel.DrawRectangle(lapiz, _locRegion.X, _locRegion.Y, _locRegion.Width, _locRegion.Height);
+
+            _img = _formImage.pbImagen.Image;
+            lbXY.Text = $"X: {_locRegion.X} Y:{_locRegion.Y}";
+        }
+
+        private void tbY_Leave(object sender, EventArgs e)
+        {
+            _formImage.pbImagen.Refresh();
+
+            _papel = _formImage.pbImagen.CreateGraphics();
+            Pen lapiz = new Pen(Color.Red);
+
+            _locRegion.Y = int.Parse(tbY.Text);
+            _papel.DrawRectangle(lapiz, _locRegion.X, _locRegion.Y, _locRegion.Width, _locRegion.Height);
+
+            _img = _formImage.pbImagen.Image;
+            lbXY.Text = $"X: {_locRegion.X} Y:{_locRegion.Y}";
+        }
+
+        #endregion
     }
 }

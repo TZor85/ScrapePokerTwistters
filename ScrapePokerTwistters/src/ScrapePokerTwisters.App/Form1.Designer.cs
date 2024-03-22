@@ -62,6 +62,9 @@ namespace ScrapePokerTwistters
             tbResumen = new TextBox();
             ckColor = new CheckBox();
             gbTest = new GroupBox();
+            cbRiver = new CheckBox();
+            cbTurn = new CheckBox();
+            cbFlop = new CheckBox();
             lbAction = new System.Windows.Forms.Label();
             lbXY = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -80,11 +83,9 @@ namespace ScrapePokerTwistters
             groupBox2 = new GroupBox();
             twRegions = new TreeView();
             cbSpeed = new ComboBox();
-            cbRiver = new CheckBox();
-            cbTurn = new CheckBox();
-            cbFlop = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pbCard1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCard0).BeginInit();
+            gbTest.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -341,6 +342,49 @@ namespace ScrapePokerTwistters
             ckColor.Text = "Color";
             ckColor.UseVisualStyleBackColor = true;
             // 
+            // gbTest
+            // 
+            gbTest.Controls.Add(cbRiver);
+            gbTest.Controls.Add(cbTurn);
+            gbTest.Controls.Add(cbFlop);
+            gbTest.Enabled = false;
+            gbTest.Location = new Point(12, 408);
+            gbTest.Name = "gbTest";
+            gbTest.Size = new Size(103, 99);
+            gbTest.TabIndex = 64;
+            gbTest.TabStop = false;
+            gbTest.Text = "Test";
+            // 
+            // cbRiver
+            // 
+            cbRiver.AutoSize = true;
+            cbRiver.Location = new Point(6, 72);
+            cbRiver.Name = "cbRiver";
+            cbRiver.Size = new Size(52, 19);
+            cbRiver.TabIndex = 47;
+            cbRiver.Text = "River";
+            cbRiver.UseVisualStyleBackColor = true;
+            // 
+            // cbTurn
+            // 
+            cbTurn.AutoSize = true;
+            cbTurn.Location = new Point(6, 47);
+            cbTurn.Name = "cbTurn";
+            cbTurn.Size = new Size(50, 19);
+            cbTurn.TabIndex = 46;
+            cbTurn.Text = "Turn";
+            cbTurn.UseVisualStyleBackColor = true;
+            // 
+            // cbFlop
+            // 
+            cbFlop.AutoSize = true;
+            cbFlop.Location = new Point(6, 22);
+            cbFlop.Name = "cbFlop";
+            cbFlop.Size = new Size(49, 19);
+            cbFlop.TabIndex = 45;
+            cbFlop.Text = "Flop";
+            cbFlop.UseVisualStyleBackColor = true;
+            // 
             // lbAction
             // 
             lbAction.AutoSize = true;
@@ -413,6 +457,7 @@ namespace ScrapePokerTwistters
             tbY.TabIndex = 30;
             tbY.Text = "0";
             tbY.TextAlign = HorizontalAlignment.Right;
+            tbY.Leave += tbY_Leave;
             // 
             // tbX
             // 
@@ -422,6 +467,7 @@ namespace ScrapePokerTwistters
             tbX.TabIndex = 29;
             tbX.Text = "0";
             tbX.TextAlign = HorizontalAlignment.Right;
+            tbX.Leave += tbX_Leave;
             // 
             // tbR
             // 
@@ -461,6 +507,7 @@ namespace ScrapePokerTwistters
             tbWidth.TabIndex = 0;
             tbWidth.Text = "0";
             tbWidth.TextAlign = HorizontalAlignment.Right;
+            tbWidth.Leave += tbWidth_Leave;
             // 
             // groupBox1
             // 
@@ -488,6 +535,7 @@ namespace ScrapePokerTwistters
             tbHeight.TabIndex = 7;
             tbHeight.Text = "0";
             tbHeight.TextAlign = HorizontalAlignment.Right;
+            tbHeight.Leave += tbHeight_Leave;
             // 
             // groupBox2
             // 
@@ -539,49 +587,6 @@ namespace ScrapePokerTwistters
             cbSpeed.Size = new Size(42, 23);
             cbSpeed.TabIndex = 12;
             // 
-            // gbTest
-            // 
-            gbTest.Controls.Add(cbRiver);
-            gbTest.Controls.Add(cbTurn);
-            gbTest.Controls.Add(cbFlop);
-            gbTest.Enabled = false;
-            gbTest.Location = new Point(12, 408);
-            gbTest.Name = "gbTest";
-            gbTest.Size = new Size(103, 99);
-            gbTest.TabIndex = 64;
-            gbTest.TabStop = false;
-            gbTest.Text = "Test";
-            // 
-            // cbRiver
-            // 
-            cbRiver.AutoSize = true;
-            cbRiver.Location = new Point(6, 72);
-            cbRiver.Name = "cbRiver";
-            cbRiver.Size = new Size(52, 19);
-            cbRiver.TabIndex = 47;
-            cbRiver.Text = "River";
-            cbRiver.UseVisualStyleBackColor = true;
-            // 
-            // cbTurn
-            // 
-            cbTurn.AutoSize = true;
-            cbTurn.Location = new Point(6, 47);
-            cbTurn.Name = "cbTurn";
-            cbTurn.Size = new Size(50, 19);
-            cbTurn.TabIndex = 46;
-            cbTurn.Text = "Turn";
-            cbTurn.UseVisualStyleBackColor = true;
-            // 
-            // cbFlop
-            // 
-            cbFlop.AutoSize = true;
-            cbFlop.Location = new Point(6, 22);
-            cbFlop.Name = "cbFlop";
-            cbFlop.Size = new Size(49, 19);
-            cbFlop.TabIndex = 45;
-            cbFlop.Text = "Flop";
-            cbFlop.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -613,12 +618,12 @@ namespace ScrapePokerTwistters
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pbCard1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCard0).EndInit();
+            gbTest.ResumeLayout(false);
+            gbTest.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            gbTest.ResumeLayout(false);
-            gbTest.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
